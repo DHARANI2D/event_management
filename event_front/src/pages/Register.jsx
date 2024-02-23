@@ -4,7 +4,7 @@ import { Card, Form, Button, Row, Col } from 'react-bootstrap';
 import loginImage from '../assets/images/login.jpg';
 import { useState } from 'react';
 import Header from '../components/Brand';
-
+import Footer from '../components/Footer';
 const Register = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -115,7 +115,7 @@ const Register = () => {
     <div><Header />
     <Row className="justify-content-center align-items-center min-vh-100">
       {/* Card for Image */}
-      <Col md={6}>
+      <Col md={5}>
         <Card className="border-0">
           <Card.Body>
             {/* Use the imported image */}
@@ -129,7 +129,7 @@ const Register = () => {
       </Col>
 
       {/* Card for Credentials */}
-      <Col md={4}>
+      <Col md={5}>
         <Card className="mx-auto">
           <Card.Body>
             <h2>Register</h2>
@@ -223,19 +223,24 @@ const Register = () => {
                 <Form.Control.Feedback type="invalid">
                   {formErrors.city}
                 </Form.Control.Feedback>
-              </Form.Group>
+              </Form.Group><br />
 
-              <Button variant="primary" type="submit">
-                Register
-              </Button><br />
+              <div className="d-flex align-items-center justify-content-center">
+            <Button variant="primary" type="submit" className="w-100">
+              Register
+            </Button>
+          </div>
             </Form>
+            <div className="text-center mt-3">
             <p className="mt-3">
               Already have an account? <Link to="/login">Login</Link>
             </p>
+            </div>
           </Card.Body>
         </Card>
       </Col>
     </Row>
+    <Footer />
     </div>
   );
 };

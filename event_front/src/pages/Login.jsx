@@ -1,8 +1,10 @@
 // Login.js
 import { Link } from 'react-router-dom';
 import { Card, Form, Button, Row, Col } from 'react-bootstrap';
+import { GoogleLogin } from 'react-google-login';
 import loginImage from '/Users/dharanidharansenthilkumar/Projects/event_management/event_front/src/assets/images/login2.jpg';
 import Header from '../components/Brand';
+import Footer from '../components/Footer';
 
 const Login = () => {
   const handleSubmit = (e) => {
@@ -26,45 +28,71 @@ const Login = () => {
     console.log('Password:', password);
   };
 
+  const responseGoogleSuccess = (response) => {
+    console.log('Google Login Success:', response);
+    // Add your logic for handling Google login success here
+  };
+
+  const responseGoogleFailure = (error) => {
+    console.error('Google Login Failure:', error);
+    // Add your logic for handling Google login failure here
+  };
+
   return (
-    <div><Header />
-    <Row className="justify-content-center align-items-center min-vh-100 mt-1">
-      {/* Card for Image */}
-      <Col md={6}>
-        <Card className="border-0">
-          <Card.Body>
-            <img src={loginImage} alt="Login Image" className="img-fluid" />
-          </Card.Body>
-        </Card>
-      </Col>
+    <div>
+      <Header />
+      <Row className="justify-content-center align-items-center mt-1">
+  {/* Card for Image */}
+  <Col xs={6}>
+    <Card className="border-0">
+      <Card.Body>
+        <img src={loginImage} alt="Login Image" className="img-fluid" />
+      </Card.Body>
+    </Card>
+  </Col>
 
-      {/* Card for Credentials with Border */}
-      <Col md={4}>
-        <Card className="mx-auto border">
-          <Card.Body>
-            <h2>Login</h2>
-            <Form onSubmit={handleSubmit}>
-              <Form.Group controlId="formBasicEmail" as={Col} md={12}>
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" name="email" />
-              </Form.Group>
+  {/* Card for Credentials with Border */}
+  <Col xs={6}>
+    <Card className="mx-auto border">
+      <Card.Body>
+        <h2>Login</h2>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group controlId="formBasicEmail" as={Col} md={12}>
+            <Form.Label>Email address</Form.Label>
+            <Form.Control type="email" placeholder="Enter email" name="email" />
+          </Form.Group>
 
-              <Form.Group controlId="formBasicPassword" as={Col} md={12}>
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" name="password" />
-              </Form.Group><br />
+          <Form.Group controlId="formBasicPassword" as={Col} md={12}>
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" placeholder="Password" name="password" />
+          </Form.Group><br />
 
-              <Button variant="primary" type="submit" className="d-flex align-items-center">
-                Login
+          <div className="d-flex align-items-center justify-content-center">
+            <Button variant="primary" type="submit" className="w-100">
+              Login
             </Button>
-            </Form>
-            <p className="mt-3">
+          </div>
+
+          <div className="text-center mt-3">
+            <p>
               Don't have an account? <Link to="/register">Register</Link>
             </p>
-          </Card.Body>
-        </Card>
-      </Col>
-    </Row>
+            <GoogleLogin
+              clientId="YOUR_GOOGLE_CLIENT_ID" // Replace with your Google API client ID
+              buttonText="Login with Google"
+              onSuccess={responseGoogleSuccess}
+              onFailure={responseGoogleFailure}
+              cookiePolicy={'single_host_origin'}
+              className="google-login-button"
+            />
+          </div>
+        </Form>
+      </Card.Body>
+    </Card>
+  </Col>
+</Row>
+
+      <Footer />
     </div>
   );
 };

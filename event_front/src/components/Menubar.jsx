@@ -1,12 +1,32 @@
+import React, { useState } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { MdLocationCity, MdBrush, MdPhotoCamera, MdCake, MdMic, MdCardGiftcard, MdRestaurant } from 'react-icons/md';
 
-const NavItem = ({ icon, label }) => (
-  <div className="text-center">
-    {icon}
-    <div>{label}</div>
-  </div>
-);
+const NavItem = ({ icon, label }) => {
+  const [isHovered, setHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+  };
+
+  const zoomEffect = isHovered ? 'scale(1.2)' : 'scale(1)';
+
+  return (
+    <div
+      className="text-center nav-item"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      style={{ transform: zoomEffect, transition: 'transform 0.3s ease-in-out' }}
+    >
+      {icon}
+      <div>{label}</div>
+    </div>
+  );
+};
 
 const NavigationBar = () => {
   const navItems = [
