@@ -6,14 +6,13 @@ import Wishlist from '../components/Wishlist';
 import FooterMain from '../components/FooterMain';
 
 const UserProfile = () => {
-  // Sample user data (you can replace this with your user data)
   const initialUserData = {
     name: 'John Doe',
     email: 'john.doe@example.com',
     mobile: '123-456-7890',
     phone: '987-654-3210',
     city: 'Sample City',
-    profileImage: 'https://via.placeholder.com/150', // Placeholder image URL
+    profileImage: 'https://via.placeholder.com/150',
   };
 
   const [userData, setUserData] = useState(initialUserData);
@@ -24,14 +23,11 @@ const UserProfile = () => {
   };
 
   const handleSaveClick = () => {
-    // Perform save/update logic here (e.g., make an API call to update user data)
     setEditing(false);
-    // For this example, we're not making an API call, just updating state
   };
 
   const handleCancelClick = () => {
     setEditing(false);
-    // Reset user data to initial values on cancel
     setUserData(initialUserData);
   };
 
@@ -131,7 +127,6 @@ const UserProfile = () => {
           </Card>
         </Col>
 
-        {/* Right Card for Order Details */}
         <Col md={6}>
           <OrderDetails />
         </Col>

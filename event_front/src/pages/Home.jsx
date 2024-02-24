@@ -1,12 +1,13 @@
 // Home.js
-import NavbarComponent from "../components/NavbarComponent";
-import CarouselComponent from "../components/CarouselComponent"; 
-import Menubar from "../components/Menubar";
-import img1 from "../assets/images/calander.png";
-import img2 from "../assets/images/celebrate.png";
-import img3 from "../assets/images/quote.png";
+import NavbarComponent from '../components/NavbarComponent';
+import CarouselComponent from '../components/CarouselComponent';
+import Menubar from '../components/Menubar';
 import HitworkItem from '../components/HitworkItem';
 import FooterMain from '../components/FooterMain';
+import img1 from '../assets/images/calander.png';
+import img2 from '../assets/images/celebrate.png';
+import img3 from '../assets/images/quote.png';
+
 const Home = () => {
   return (
     <div>
@@ -19,16 +20,19 @@ const Home = () => {
             imgSrc={img1}
             title="Plan your Event"
             description="Send us your event details and we will plan everything to perfection to your preferences"
+            to="/event"
           />
           <HitworkItem
             imgSrc={img2}
             title="Get a Quote"
             description="Get a transparent and comprehensive quote of all anticipated expenses and miscellaneous"
+            to="/quote"
           />
           <HitworkItem
             imgSrc={img3}
             title="Celebrate your Events"
             description="Sit back and celebrate your event with loved ones as Homevents takes care of everything else"
+            to="/feedback"
           />
         </div>
       </div>

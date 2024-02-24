@@ -1,7 +1,5 @@
-// Venues.js
 
 const Venues = () => {
-  // Your Venues component logic here
 
   return (
     <div>

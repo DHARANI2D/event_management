@@ -36,8 +36,6 @@ const Register = () => {
     e.preventDefault();
 
     if (validateForm()) {
-      // Add your form submission logic here
-      // For now, just log the form data
       console.log(formData);
     }
   };
@@ -46,7 +44,6 @@ const Register = () => {
     let isValid = true;
     const newFormErrors = { ...formErrors };
 
-    // Basic validation for each field
     if (!formData.name.trim()) {
       newFormErrors.name = 'Name is required';
       isValid = false;
@@ -100,13 +97,11 @@ const Register = () => {
   };
 
   const isValidEmail = (email) => {
-    // Use a regular expression to check if the email format is valid
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
   const isValidMobile = (mobile) => {
-    // Use a regular expression to check if the mobile number format is valid
     const mobileRegex = /^[0-9]{10}$/;
     return mobileRegex.test(mobile);
   };
@@ -114,11 +109,9 @@ const Register = () => {
   return (
     <div><Header />
     <Row className="justify-content-center align-items-center min-vh-100">
-      {/* Card for Image */}
       <Col md={5}>
         <Card className="border-0">
           <Card.Body>
-            {/* Use the imported image */}
             <img
               src={loginImage}
               alt="Register Image"
@@ -128,13 +121,11 @@ const Register = () => {
         </Card>
       </Col>
 
-      {/* Card for Credentials */}
       <Col md={5}>
         <Card className="mx-auto">
           <Card.Body>
             <h2>Register</h2>
             <Form onSubmit={handleSubmit}>
-              {/* Add form fields for registration */}
               <Form.Group controlId="formBasicName">
                 <Form.Label>Name</Form.Label>
                 <Form.Control

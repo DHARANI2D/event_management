@@ -3,62 +3,39 @@ import CaveatFont from './CaveatFont';
 export default function App() {
   return (
     <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
-      <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
-        <div className='me-5 d-none d-lg-block'>
-          <span>Get connected with us on social networks:</span>
-        </div>
-
-        <div>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="facebook-f" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="twitter" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="google" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="instagram" />
-          </a>
-        </div>
-      </section>
-
       <section className=''>
         <MDBContainer className='text-center text-md-start mt-5'>
           <MDBRow className='mt-3'>
             <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>
                 <MDBIcon icon="gem" className="me-3" />
-                <CaveatFont weight={500} fontSize="1.5rem" style={{ display: 'inline' }}>Celebria </CaveatFont>
-
+                <CaveatFont weight={500} fontSize="1.5rem" style={{ display: 'inline' }}><a href='/home'>Celebria</a></CaveatFont>
               </h6>
               <p>
-                Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit.
+                The only place where you can celebrate yourself without losing happiness...
               </p>
             </MDBCol>
 
             <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
               <p>
-                <a href='#!' className='text-reset'>
-                  Angular
+                <a href='/event' className='text-reset'>
+                  Venue
                 </a>
               </p>
               <p>
-                <a href='#!' className='text-reset'>
-                  React
+              <a href='/event' className='text-reset'>
+                  Photography
                 </a>
               </p>
               <p>
-                <a href='#!' className='text-reset'>
-                  Vue
+              <a href='/event' className='text-reset'>
+                  Cakes
                 </a>
               </p>
               <p>
-                <a href='#!' className='text-reset'>
-                  Laravel
+              <a href='/event' className='text-reset'>
+                  Food
                 </a>
               </p>
             </MDBCol>
@@ -91,17 +68,17 @@ export default function App() {
               <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
               <p>
                 <MDBIcon icon="home" className="me-2" />
-                New York, NY 10012, US
+                Coimbatore , TN , IND
               </p>
               <p>
                 <MDBIcon icon="envelope" className="me-3" />
-                info@example.com
+                celebria.com
               </p>
               <p>
-                <MDBIcon icon="phone" className="me-3" /> + 01 234 567 88
+                <MDBIcon icon="phone" className="me-3" /> + 99567 99789
               </p>
               <p>
-                <MDBIcon icon="print" className="me-3" /> + 01 234 567 89
+                <MDBIcon icon="print" className="me-3" /> + 77456 34521
               </p>
             </MDBCol>
           </MDBRow>
@@ -109,10 +86,7 @@ export default function App() {
       </section>
 
       <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-        © 2021 Copyright:
-        <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
-          MDBootstrap.com
-        </a>
+        © 2024 Celebria
       </div>
     </MDBFooter>
   );

@@ -21,28 +21,22 @@ const Login = () => {
       alert('Password is required');
       return;
     }
-
-    // Add your login logic here
-    // For now, just log the email and password
     console.log('Email:', email);
     console.log('Password:', password);
   };
 
   const responseGoogleSuccess = (response) => {
     console.log('Google Login Success:', response);
-    // Add your logic for handling Google login success here
   };
 
   const responseGoogleFailure = (error) => {
     console.error('Google Login Failure:', error);
-    // Add your logic for handling Google login failure here
   };
 
   return (
     <div>
       <Header />
       <Row className="justify-content-center align-items-center mt-1">
-  {/* Card for Image */}
   <Col xs={6}>
     <Card className="border-0">
       <Card.Body>
@@ -51,7 +45,6 @@ const Login = () => {
     </Card>
   </Col>
 
-  {/* Card for Credentials with Border */}
   <Col xs={6}>
     <Card className="mx-auto border">
       <Card.Body>
@@ -78,7 +71,7 @@ const Login = () => {
               Don't have an account? <Link to="/register">Register</Link>
             </p>
             <GoogleLogin
-              clientId="YOUR_GOOGLE_CLIENT_ID" // Replace with your Google API client ID
+              clientId="YOUR_GOOGLE_CLIENT_ID" 
               buttonText="Login with Google"
               onSuccess={responseGoogleSuccess}
               onFailure={responseGoogleFailure}

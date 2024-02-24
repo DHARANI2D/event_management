@@ -37,15 +37,14 @@ function Landing() {
             author: "Jane",
             image: "url-to-jane-smith-image.jpg",
         },
-        // Add more reviews as needed
       ];
     
       const settings = {
         dots: true,
         infinite: true,
         speed: 10,
-        slidesToShow: 2, // Display two cards at a time
-        slidesToScroll: 2, // Scroll two cards at a time
+        slidesToShow: 2, 
+        slidesToScroll: 2, 
         responsive: [
           {
             breakpoint: 768,

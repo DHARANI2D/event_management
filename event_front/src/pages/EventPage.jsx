@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { Step, Stepper } from '@cimpress/react-components';
 import NavbarComponent from '../components/NavbarComponent';
 import FooterMain from '../components/FooterMain';
@@ -34,7 +34,6 @@ export default class EventBookingPage extends Component {
           <NavbarComponent />
           <p className="text-center font-weight-bold">Customize your Event</p>
           <div className="d-flex">
-            {/* Left column: Vertical Stepper */}
             <div className="mr-5" style={{ fontSize: '1.2rem', borderRight: '1px solid #ccc', paddingRight: '10px' }}>
               <Stepper activeStep={this.state.activeStep} vertical>
                 <Step onClick={() => this.setStep('0')}>
@@ -68,7 +67,6 @@ export default class EventBookingPage extends Component {
               </Stepper>
            </div>
       
-            {/* Right column: Content for each step */}
             <div style={{  padding: '10px', marginBottom: '10px', height: '500px', overflowY: 'auto', flex:'1'}}>
               {this.state.activeStep === '0' && <VenueStep onNext={this.handleNext} />}
               {this.state.activeStep === '1' && <DecorationStep onNext={this.handleNext} onBack={this.handleBack} />}
@@ -86,10 +84,8 @@ export default class EventBookingPage extends Component {
   }
 }
 
-// Define components for each step
 const VenueStep = ({ onNext }) => (
     <div>
-      {/* Add content for the Venues step */}
       <div>
         <VenueCard
           image="https://example.com/venue1.jpg"
@@ -105,7 +101,6 @@ const VenueStep = ({ onNext }) => (
           price="$1200"
           onSelect={onNext}
         />
-        {/* Add more VenueCard components for additional venues */}
       </div>
       <button className="btn btn-primary" onClick={onNext}>Next</button>
     </div>
@@ -129,7 +124,6 @@ const VenueCard = ({ image, name, location, price, onSelect }) => (
 
 const DecorationStep = ({ onNext, onBack }) => (
   <div>
-    {/* Add content for the Decorations step */}
     <p>Decorations content goes here.</p>
     <div style={{ display: 'flex', justifyContent: 'space-between', margin: '20px' }}>
       <button className="btn btn-secondary" onClick={onBack}>Back</button>
@@ -140,7 +134,6 @@ const DecorationStep = ({ onNext, onBack }) => (
 
 const PhotographyStep = ({ onNext, onBack }) => (
   <div>
-    {/* Add content for the Photography step */}
     <p>Photography content goes here.</p>
     <div style={{ display: 'flex', justifyContent: 'space-between', margin: '20px' }}>
       <button className="btn btn-secondary" onClick={onBack}>Back</button>
@@ -151,7 +144,6 @@ const PhotographyStep = ({ onNext, onBack }) => (
 
 const CakesStep = ({ onNext, onBack }) => (
   <div>
-    {/* Add content for the Cakes step */}
     <p>Cakes content goes here.</p>
     <div style={{ display: 'flex', justifyContent: 'space-between', margin: '20px' }}>
       <button className="btn btn-secondary" onClick={onBack}>Back</button>
@@ -162,7 +154,6 @@ const CakesStep = ({ onNext, onBack }) => (
 
 const EntertainmentStep = ({ onNext, onBack }) => (
   <div>
-    {/* Add content for the Entertainment step */}
     <p>Entertainment content goes here.</p>
     <div style={{ display: 'flex', justifyContent: 'space-between', margin: '20px' }}>
       <button className="btn btn-secondary" onClick={onBack}>Back</button>
@@ -173,7 +164,6 @@ const EntertainmentStep = ({ onNext, onBack }) => (
 
 const ReturnGiftsStep = ({ onNext, onBack }) => (
   <div>
-    {/* Add content for the Return Gifts step */}
     <p>Return Gifts content goes here.</p>
     <div style={{ display: 'flex', justifyContent: 'space-between', margin: '20px' }}>
       <button className="btn btn-secondary" onClick={onBack}>Back</button>
@@ -184,11 +174,10 @@ const ReturnGiftsStep = ({ onNext, onBack }) => (
 
 const FoodStep = ({ onBack }) => (
   <div>
-    {/* Add content for the Food step */}
     <p>Food content goes here.</p>
     <div style={{ display: 'flex', justifyContent: 'space-between', margin: '20px' }}>
       <button className="btn btn-secondary" onClick={onBack}>Back</button>
-      <button className="btn btn-primary" disabled>Next</button>
+      <button className="btn btn-primary" onClick={() => window.location.href = '/cart'}>Next</button>
     </div>
   </div>
 );

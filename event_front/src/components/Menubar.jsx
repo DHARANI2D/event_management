@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { MdLocationCity, MdBrush, MdPhotoCamera, MdCake, MdMic, MdCardGiftcard, MdRestaurant } from 'react-icons/md';
 
