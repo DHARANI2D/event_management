@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import { Card, Form, Button, Row, Col } from 'react-bootstrap';
 import { GoogleLogin } from 'react-google-login';
-import loginImage from '/Users/dharanidharansenthilkumar/Projects/event_management/event_front/src/assets/images/login2.jpg';
+import loginImage from '/Users/dharanidharansenthilkumar/Projects/event_management/FRONTEND/event_front/src/assets/images/login2.jpg';
 import Header from '../components/Brand';
 import Footer from '../components/Footer';
 

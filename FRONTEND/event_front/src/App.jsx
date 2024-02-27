@@ -1,6 +1,6 @@
 import { lazy, Suspense, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Cake from '/Users/dharanidharansenthilkumar/Projects/event_management/event_front/src/assets/images/cake.gif'
+import Cake from '/Users/dharanidharansenthilkumar/Projects/event_management/FRONTEND/event_front/src/assets/images/cake.gif'
 const Login = lazy(() => import('./pages/Login'));
 const Register = lazy(() => import('./pages/Register'));
 const Landing = lazy(() => import('./pages/Landing'));
@@ -12,7 +12,7 @@ const Quote = lazy(() => import('./pages/Quote'));
 const AdminPage = lazy(() => import('./pages/Admin'));
 const FeedbackPage = lazy(() => import('./pages/FeedbackPage'));
 const Checkout = lazy(() => import('./pages/Cart'));
-
+const Venue =lazy(() => import('./pages/Venues'));
 
 const LoadingOverlay = () => {
   return (
@@ -65,11 +65,11 @@ function App() {
           <Route path="/quote" element={<Suspense fallback={<div>Loading...</div>}><Quote /></Suspense>} />
           <Route path="/feedback" element={<Suspense fallback={<div>Loading...</div>}><FeedbackPage /></Suspense>} />
           <Route path="/cart" element={<Suspense fallback={<div>Loading...</div>}><Checkout /></Suspense>} />
-
+          <Route path="/venue" element={<Suspense fallback={<div>Loading...</div>}><Venue /></Suspense>} />
+          
         </Routes>
       </div>
     </Router>
   );
 }
-
 export default App;

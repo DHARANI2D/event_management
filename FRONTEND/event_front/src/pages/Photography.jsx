@@ -1,9 +1,17 @@
-import { Component } from 'react'
+// Photography.js
+import CategoryList from './CategoryList';
 
-export default class Photography extends Component {
-  render() {
-    return (
-      <div>Photography</div>
-    )
-  }
-}
+const photoData = [
+  // ...
+];
+
+const Photography = () => {
+  return (
+    <div>
+      <h1 className="text-center mt-4">Venues</h1>
+      <CategoryList items={photoData} category="photos" />
+    </div>
+  );
+};
+
+export default Photography;
