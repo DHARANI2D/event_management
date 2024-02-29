@@ -5,24 +5,26 @@ import com.example.adp.Model.User;
 
 public class UserMapper {
 
-    public static UserDto mapToUserDto(User user) {
+    public static UserDto mapToUserDto(User userInfo) {
         return new UserDto(
-                user.getId(),
-                user.getName(),
-                user.getContactNo(),
-                user.getEmail(),
-                user.getCorporateName(),
-                user.getPassword());
+                userInfo.getId(),
+                userInfo.getName(),
+                userInfo.getContact(),
+                userInfo.getEmail(),
+                userInfo.getCity(),
+                userInfo.getPassword(),
+                userInfo.getRoles());
     }
 
-    public static User mapToUser(UserDto userDto) {
+    public static User mapToUser(UserDto userInfoDto) {
         return new User(
-                userDto.getId(),
-                userDto.getName(),
-                userDto.getContactNo(),
-                userDto.getEmail(),
-                userDto.getCorporateName(),
-                userDto.getPassword());
+                userInfoDto.getId(),
+                userInfoDto.getName(),
+                userInfoDto.getContact(),
+                userInfoDto.getEmail(),
+                userInfoDto.getCity(),
+                userInfoDto.getPassword(),
+                userInfoDto.getRoles());
     }
 
 }

@@ -1,40 +1,26 @@
 package com.example.adp.Model;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
-@Table(name = "userss")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "name", nullable = false)
+    private int id;
+    
     private String name;
-
-    @Column(name = "contact_no", nullable = false)
-    private String contactNo;
-
-    @Column(name = "email_id", nullable = false, unique = true)
+    private String contact;
     private String email;
-
-    @Column(name = "corporate_name", nullable = false)
-    private String corporateName;
-
-    @Column(name = "password", nullable = false)
+    private String city;
     private String password;
+    private String roles = "user"; 
 }

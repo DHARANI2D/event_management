@@ -27,7 +27,7 @@ public class UserController {
 
     // Get User REST API
     @GetMapping("{id}")
-    public ResponseEntity<UserDto> getUserById(@PathVariable("id") Long userId) {
+    public ResponseEntity<UserDto> getUserById(@PathVariable("id") int userId) {
         UserDto userDto = userService.getUserById(userId);
         return ResponseEntity.ok(userDto);
     }
@@ -41,14 +41,14 @@ public class UserController {
 
     // Update User REST API
     @PutMapping("{id}")
-    public ResponseEntity<UserDto> updateUser(@PathVariable("id") Long userId, @RequestBody UserDto userDto) {
+    public ResponseEntity<UserDto> updateUser(@PathVariable("id") int userId, @RequestBody UserDto userDto) {
         UserDto updatedUser = userService.updateUser(userId, userDto);
         return ResponseEntity.ok(updatedUser);
     }
 
     // Delete User REST API
     @DeleteMapping("{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable("id") Long userId) {
+    public ResponseEntity<Void> deleteUser(@PathVariable("id") int userId) {
         userService.deleteUser(userId);
         return ResponseEntity.noContent().build();
     }

@@ -7,11 +7,11 @@ import com.example.adp.Dto.*;
 public interface UserService {
     UserDto createUser(UserDto userDto);
 
-    UserDto getUserById(Long userId);
+    UserDto getUserById(int userId);
 
     List<UserDto> getAllUsers();
 
-    UserDto updateUser(Long userId, UserDto userDto);
+    UserDto updateUser(int userId, UserDto userDto);
 
-    void deleteUser(Long userId);
+    void deleteUser(int userId);
 }
